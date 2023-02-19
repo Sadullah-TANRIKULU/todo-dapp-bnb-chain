@@ -1,38 +1,157 @@
-.App {
-  text-align: center;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+    padding: 1rem 1.7rem 1rem 0;
+    background-image: url('./assets/notepad-1240975.jpg');
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+header {
+    display: grid;
+    width: 100%;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+header > h1 {
+    justify-self: center;
+    height: 2.5rem;
 }
 
-.App-link {
-  color: #61dafb;
+header > div {
+    justify-self: right;
+    align-self: center;
+    display: grid;
+    width: 30%;
+    margin: 0.5rem;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+header div button {
+    justify-self: right;
+    border-radius: 5px;
+    background: linear-gradient(to right, gray, gray, rgb(167, 88, 88));
+    width: 8rem;
+    height: 2.5rem;
+    color: aliceblue;
+    font-family: Tahoma, sans-serif;
+    font-weight: bolder;
+    border: none;
+    cursor: pointer;
 }
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin: 1rem;
+    padding: 1rem;
+    border-radius: .8rem;
+    background: linear-gradient(to right, rgb(128, 93, 93), rgb(173, 112, 112), rgb(179, 91, 91));
+    width: 100%;
+    min-height: 13rem;
+    height: fit-content;
+    gap: 1rem;
+}
+
+main .form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    min-height: 6rem;
+}
+main .form form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+main .form form div {
+    display: flex;
+    width: 100%;
+    height: 3rem;
+    font-size: 1.5rem;
+}
+
+main .form form button {
+    border-radius: 5px;
+    background: linear-gradient(to right, gray, gray, rgb(167, 88, 88));
+    width: 8rem;
+    height: 2.5rem;
+    color: aliceblue;
+    font-family: Tahoma, sans-serif;
+    font-weight: bolder;
+    border: none;
+    cursor: pointer;
+}
+
+main .displayTasks {
+    width: 100%;
+    font-family: 'Trebuchet MS', sans-serif;
+    min-height: 3rem;
+    font-size: 1.2rem;
+}
+
+main .displayTasks .task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 2rem;
+    height: 2rem;
+}
+
+main .displayTasks .task:nth-child(odd) {
+    background-color: rgb(135, 85, 85);
+}
+main .displayTasks .task:nth-child(even) {
+    background-color: rgb(167, 88, 88);
+}
+
+main .displayTasks .task div {
+    display: flex;
+    align-items: center;
+    padding: 0 .2rem 0 .2rem;
+    gap: 1rem;
+    cursor: pointer;
+}
+
+main .displayTasks .task div #quill,
+main .displayTasks .task div #bin {
+    cursor: pointer;
+}
+
+
+main .form form div label {
+    width: 30%;
+    align-self: center;
+}
+
+main .form form div input {
+    width: 70%;
+    height: 100%;
+    border-radius: 5px;
+    text-indent: 1rem;
+    font-size: 1.5rem;
+    caret-color : red;
+}
+
+main .form form div input:focus {
+    outline: none;
+    color : rgb(43, 24, 24);
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    height: 1.5rem;
+    background-color: rgb(187, 189, 190);
+}
+

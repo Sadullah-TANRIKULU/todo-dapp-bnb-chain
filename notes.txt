@@ -1,0 +1,21 @@
+You can add this fix by editing the file node_modules/react-scripts/config/webpack.config.js, and pasting this after the line performance: false,
+
+ignoreWarnings: [
+  // Ignore warnings raised by source-map-loader.
+  // some third party packages may ship miss-configured sourcemaps, that interrupts the build
+  // See: https://github.com/facebook/create-react-app/discussions/11278#discussioncomment-1780169
+  /**
+   *
+   * @param {import('webpack').WebpackError} warning
+   * @returns {boolean}
+   */
+  function ignoreSourcemapsloaderWarnings(warning) {
+    return (
+      warning.module &&
+      warning.module.resource.includes('node_modules') &&
+      warning.details &&
+      warning.details.includes('source-map-loader')
+    );
+  },
+],
+But when you make yarn install or npm install, yours edits will be deleted.
